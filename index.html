@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>University of Ghana Online Fees Payment</title>
+ 
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <!-- <script type="text/javascript" src="js/script.js"></script> -->
+  <!-- bootstrap validation  -->
+  <script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.1.3/dist/bootstrap-validate.js" ></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset=md-2">
+        <div class="row">
+          <div class="col-md-5 register-left">
+                <h3>Register Online Payment</h3>
+                <p>Pay your online school fees for your courses here.</p>
+                <button data-toggle="collapse" data-target="#demo" type="button" name="button" class="btn btn-primary">Read More</button>
+                <div id="demo" class="collapse" >
+                <p>will load all of Bootstrap's jQuery plugins onto the jQuery object. The bootstrap module itself does not export anything. You can manually load Bootstrap's jQuery plugins individually by loading the /js/*.js files under the package's top-level directory.</p>
+                </div>
+              </div>
+
+          <div class="col-md-7 register-right">
+            <h2>Register Here</h2>
+            <form action="api.php" method="post" onsubmit=" return (validate());" name="myform">
+            <div class="register-form">
+              <div class="form-group">
+                <input  id="firstname" type="text" name="firstname" class="form-control " placeholder="Firstname">
+                <div id="fname_err"  class="val_err"></div>
+              </div>
+
+              <div class="form-group">
+                <input id="lastname" type="text" name="lastname" class="form-control " placeholder="Lastname">
+                <div id="lname_err" class="val_err"></div>
+              </div>
+
+              <div class="form-group">
+                <input id="id" type="number" name="studentID" class="form-control " placeholder="StudentID">
+               
+                <div id="id_err" class="val_err"></div>
+              </div>
+
+              <div class="form-group input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input id="email" type="email" name="email" class="form-control " placeholder="Email">
+                
+                <div id="email_err" class="val_err"></div>
+              </div>
+
+              <div class="form-group input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                  <input id="pwd" type="password" name="password" class="form-control " placeholder="Password">
+                  
+              </div>
+
+              <div class="form-group input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-lock" style="color:rebeccapurple"  ></i></span>
+                <input id="repwd"type="password" name="repassword" class="form-control " placeholder="Re-type Password">
+                <div id="password_err" class="val_err"></div>
+              </div>
+              <div id="form_err"  class="val_err"></div>
+
+              <button type="submit" name="button" class="btn btn-primary">Register</button>
+            </div>
+            <div class="forgot">
+              <a href="#" class="forgotpwd">Forgot password?</a>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+<script type="text/javascript">
+
+//validation front end
+var firstn = document.myform.firstname;
+var lastn = document.myform.lastname;
+var stud_id = document.myform.studentID;
+var email = document.myform.email;
+var pwd = document.myform.password;
+var repwd = document.myform.repassword;
+
+//getting all error and display
+var n_er = document.getElementById("fname_err"); 
+var l_er = document.getElementById("lname_err");
+var id_er = document.getElementById(" id_err");
+var email_er = document.getElementById("email_err");
+var pwd_er = document.getElementById("password_err");
+var f_err = document.getElementById("form_err");
+
+//adding all event listeners
+// stud_id.addEventListener("blur" , idVerify, true);
+// email.addEventListener("blur" , emailVerify, true);
+// pwd.addEventListener("blur" , pwdVerify, true);
+
+function isEmpty(data){
+  return null==data || data == "" || data.length < 1 ;
+}
+
+function showError(field, message){
+  field.innerHTML = message;
+  setTimeout(()=>{
+    field.innerHTML = " ";
+  },3000);
+  return false;
+}
+//validation
+function validate(){
+
+  if(isEmpty(firstn.value))
+  {
+    return showError(n_er,"*First name is required!");
+  }
+  else if(isEmpty(lastn.value))
+  {
+    return showError(l_er,"*Last name is required!");
+  }
+  if(isEmpty(stud_id.value))
+  {
+    return showError(id_er,"*Student ID is required!");
+  }
+   if(isEmpty(email.value))
+  {
+    return showError(email_er,"*Your email is highly required!");
+  }
+   if(isEmpty(pwd.value) || isEmpty(repwd.value))
+  {
+    return showError(pwd_er,"*Enter passwords in both fields.");
+      if(pwd.value !== repwd.value)
+    {
+        return showError(pwd,"*Your passwords does not match.");
+    }
+  }
+ if(isEmpty(firstn.value) || isEmpty(lastn.value)  || isEmpty(stud_id.value) && isEmpty(email.value) || isEmpty(pwd.value) || isEmpty(repwd.value))
+  {
+      return showError(f_err,"*All fields cannot be empty. Please fill them!");
+  }
+
+}
+validate();
+</script>
