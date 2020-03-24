@@ -1,0 +1,126 @@
+html,body{
+  width:100%;
+  margin:0;
+  padding:0;
+  font-family: 'Nunito', sans-serif;
+}
+body{
+  background-image:linear-gradient(to right, #833ab4,#fd1d1d,#fcb045);
+  margin-top: 150px !important;
+
+}
+.register-left{
+  text-align: center;
+  color: white;
+  padding:20px;
+}
+.register-left p{
+  padding: 20px 20px 0;
+  /* font-weight: 600; */
+  font-family: 'Nunito', sans-serif;
+}
+.register-left .btn-primary{
+  border-radius: 1.5rem;
+  border: none;
+  width: 120px;
+  background: #f8f8f8;
+  font-weight: 500;
+  color:#555;
+  margin-top: 20px;
+  padding: 10px;
+  font-weight: 600;
+}
+.register-left .btn-primary:hover{
+  background: #ff9800;
+  color:white;
+  transition: 0.5s;
+  opacity: 1;
+}
+.register-right{
+  border: none;
+  background:#f8f8f8;
+  border-top-left-radius: 20%;
+  border-bottom-right-radius: 20%;
+  padding:40px;
+  margin-bottom: -200px;
+  background-color:ghostwhite;
+  /* margin-right:10px; */
+  /* margin-bottom: 80px; */
+
+
+}
+.register-right h2 {
+  text-align:center;
+  /* margin-bottom:20px; */
+  color:#555;
+  font-weight: bold;
+  font-family: 'Nunito', sans-serif;
+  font-size: 40px;
+  letter-spacing: 1px;
+}
+
+.register-left h3{
+  font-weight: bolder;
+  color:white;
+  letter-spacing: 0.5px;
+  font-family: 'Nunito', sans-serif;
+}
+.register-left p{
+  font-size: 15px;
+  font-family: 'Nunito', sans-serif;
+  letter-spacing: 0.3px;
+}
+.register-form{
+  /* padding: 30px; */
+  margin-top:60px;
+  margin-bottom: 60px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.register-form .form-group placeholder{
+  letter-spacing: 2px;
+}
+.register-right .btn-primary{
+  border-radius: 1.5rem;
+  border: none;
+  width: 120px;
+  background: #ff9800;
+  font-weight: 600;
+  color:white;
+  margin-top: 10px;
+  padding: 10px;
+  float: right;
+}
+.register-right .btn-primary:hover{
+  background:#ff5722;
+  color:white;
+  transition: 0.5s;
+  opacity: 1;
+}
+ .register-right .forgot .forgotpwd{
+  text-align: center;
+  padding:40px;
+  /* margin-top:100px; */
+}
+.forgotpwd{
+  letter-spacing: 0.2px;
+  font-size: 15px;
+  /* margin-top: 50px; */
+  font-weight: 300px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.val_err{
+  color: #fd1d1d!important;
+  font-size: 15px;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+  /* text-align: center; */
+  /* margin-left: 500px; */
+}
+.frm_err{
+  color:#ff5722 !important;
+  font-size: 15px;
+  margin-top: 10px;
+}
+.glyi
